@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,8 +25,34 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-
+    @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+        dismiss(animated: true)
+        
+    }
+    
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
+        alertController.addTextField()
+        let save = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let textField = alertController.textFields?.first, textField.text != "" else {return}
+            
+            // let task
+            // taskRef
+            //
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alertController.addAction(save)
+        alertController.addAction(cancel)
+        
+        present(alertController, animated: true)
     }
     
     
@@ -36,15 +63,5 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

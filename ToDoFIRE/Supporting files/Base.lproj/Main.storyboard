@@ -71,7 +71,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJU-53-soh"/>
-                                                    <segue destination="9Jq-4p-DcA" kind="show" identifier="TasksSegue" id="h4h-g7-VWm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qg-FP-Gec">
@@ -117,6 +116,7 @@
                         <outlet property="emailTextField" destination="oI0-jO-7Um" id="Lgb-Lo-f5A"/>
                         <outlet property="passwordTextField" destination="0ug-80-jPy" id="hjT-0z-QA3"/>
                         <outlet property="warningLabel" destination="NOS-1f-zfP" id="i2B-pd-EQ3"/>
+                        <segue destination="9Jq-4p-DcA" kind="show" identifier="tasksSegue" id="34h-aa-lgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,6 +156,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="DE9-af-okP">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="nd6-XO-lha">
+                            <connections>
+                                <action selector="signOutTapped:" destination="Uhz-XL-Ffo" id="XDS-B8-Cdd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="r6i-0n-DOA">
                             <connections>
                                 <action selector="addTapped:" destination="Uhz-XL-Ffo" id="HsV-9I-HqG"/>
