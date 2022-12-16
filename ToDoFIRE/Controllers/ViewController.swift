@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { [weak self] in
             self?.warningLabel.alpha = 1
         }) { [weak self] complete in
-            self?.warningLabel.alpha = 0
+            self?.warningLabel.alpha = 0.5
         }
         
     }
